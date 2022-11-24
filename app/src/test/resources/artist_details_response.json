@@ -1,0 +1,15 @@
+{
+  "data": {
+    "node": {
+      "__typename": "Artist",
+      "id": "QXJ0aXN0OjBmNDYwYmViLTYwYTItNDBiZC1hNGYwLWM5OTkwOWZhZWJlYQ==",
+      "name": "Jane Mayer",
+      "disambiguation": "US investigative journalist",
+      "rating": {
+        "value": null,
+        "voteCount": 0
+      },
+      "country": "US"
+    }
+  }
+}

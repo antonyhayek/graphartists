@@ -1,0 +1,46 @@
+query Artists($query: String!, $firstCount: Int!, $lastArtistId: String) {
+  search {
+    artists(query: $query, first: $firstCount, after: $lastArtistId) {
+      nodes {
+        ...ArtistBasicFragment
+      }
+       pageInfo {
+              hasNextPage
+              hasPreviousPage
+              startCursor
+              endCursor
+       }
+       totalCount
+    }
+  }
+}
+
+query Artist($artistId: ID!) {
+  node(id: $artistId) {
+    ...ArtistDetailsFragment
+  }
+}
+
+# ... "QXJ0aXN0OjE0NGVmNTI1LTg1ZTktNDBjMy04MzM1LTAyYzMyZDA4NjFmMw=="
+
+fragment ArtistDetailsFragment on Artist {
+  id
+  name
+  disambiguation
+  rating {
+    value
+    voteCount
+  }
+  country
+}
+
+fragment ArtistBasicFragment on Artist {
+  id
+  name
+  disambiguation
+  rating {
+      value
+      voteCount
+    }
+    country
+}

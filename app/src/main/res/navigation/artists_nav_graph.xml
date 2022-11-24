@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/artists_nav_graph.xml"
+    app:startDestination="@id/artistsFragment">
+
+
+    <fragment
+        android:id="@+id/artistsFragment"
+        android:name="com.antonyhayek.graphartists.presentation.ui.artists.ArtistsFragment"
+        android:label="fragment_artists"
+        tools:layout="@layout/fragment_artists" >
+
+        <action
+            android:id="@+id/action_artistsFragment_to_artistDetailsFragment"
+            app:destination="@id/artistDetailsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/artistDetailsFragment"
+        android:name="com.antonyhayek.graphartists.presentation.ui.artist_details.ArtistDetailsFragment"
+        android:label="fragment_artist_details"
+        tools:layout="@layout/fragment_artist_details">
+
+    <argument
+        android:name="id"
+        app:argType="string"
+        app:nullable="false" />
+
+    </fragment>
+
+</navigation>
